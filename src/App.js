@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faHome, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faList, faUser, faHome, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons'
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,24 +14,22 @@ import RestaurantCreate from "./component/RestaurantCreate";
 import RestaurantSearch from "./component/RestaurantSearch";
 
 import RestaurantUpdate from "./component/RestaurantUpdate";
+import Login from './component/Login';
 
 class App extends Component {
   render() {
     return (
 
       <Router>
-
-
         <div class="App">
           <div class="topnav">
 
             <ul>
-             
               <a class="#" href="/"><FontAwesomeIcon icon={faHome} />Home</a>
               <a href="/List"><FontAwesomeIcon icon={faList} /> List</a>
               <a href="/Create"><FontAwesomeIcon icon={faPlus} />Create </a>
               <a href="/Search"><FontAwesomeIcon icon={faSearch} />Search </a>
-               <a href="/Login">Login </a>
+               <a href="/Login"><FontAwesomeIcon icon={faUser} />Login </a>
              
             </ul>
           </div>
@@ -41,12 +39,15 @@ class App extends Component {
           <Route exact path='/list' element={< RestaurantList />}></Route>
           <Route exact path='/create' element={< RestaurantCreate />}></Route>
           <Route exact path='/search' element={< RestaurantSearch />}></Route>
-          <Route exact path='/update' element={< RestaurantUpdate />}></Route>
-          <Route path="/update/:id" render={props=>(< RestaurantUpdate {...props}/>)}></Route>
+          <Route exact path='/update/:id' element={< RestaurantUpdate />}></Route>
+          {/* <Route path="/update/:id" render={props=>(< RestaurantUpdate {...props}/>)}></Route> */}
+
+          <Route path='/login' element ={<Login/>}> </Route>
         </Routes>
       </Router>
     );
   }
+  
 }
 
 export default App;

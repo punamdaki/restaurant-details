@@ -1,3 +1,9 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }
@@ -19,6 +25,13 @@ span {
   margin: auto;
   width: 500px;
   margin-top: 10px;
+}
+.search-row{
+  max-width: 100px;
+  background-color: aliceblue;
+  padding: 3px;
+  margin: auto;
+  margin-top:8px
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -121,4 +134,5 @@ td {
 tr:nth-child(even) {
   background-color: #9f9191f3;
 }
+
 
